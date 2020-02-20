@@ -10,7 +10,7 @@ pipeline {
     }
     stage ('Deploy') {
         steps {
-            sshPublisher(publishers: [sshPublisherDesc(configName: 'prod', sshCredentials: [encryptedPassphrase: '{AQAAABAAAAAQeL0KEA/tskhO80seegQgTsjvDy+DGQyEm5r6AG6QWGE=}', key: '', keyPath: '', username: 'deploy'], transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'tar xvf /opt/train-schedule/trainSchedule.zip', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/opt/train-schedule', remoteDirectorySDF: false, removePrefix: '/dist', sourceFiles: '/dist/trainSchedule.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+            sshPublisher(publishers: [sshPublisherDesc(configName: 'prod', sshCredentials: [encryptedPassphrase: '{AQAAABAAAAAQeL0KEA/tskhO80seegQgTsjvDy+DGQyEm5r6AG6QWGE=}', key: '', keyPath: '', username: 'deploy'], transfers: [sshTransfer(cleanRemote: false, excludes: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/opt/train-schedule', remoteDirectorySDF: false, removePrefix: '/dist', sourceFiles: '/dist/trainSchedule.zip')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
         }
     }
     }
